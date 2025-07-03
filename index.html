@@ -14,11 +14,10 @@ box-sizing: border-box;
 
 ```
 body {
-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 line-height: 1.6;
 color: #333;
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-overflow-x: hidden;
+background: #fff;
 }
 
 .container {
@@ -29,14 +28,13 @@ padding: 0 20px;
 
 /* Header */
 header {
-background: rgba(255, 255, 255, 0.1);
-backdrop-filter: blur(10px);
-border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+background: #fff;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 position: fixed;
 width: 100%;
 top: 0;
 z-index: 1000;
-transition: all 0.3s ease;
+border-bottom: 3px solid #00A859;
 }
 
 nav {
@@ -49,8 +47,7 @@ padding: 1rem 0;
 .logo {
 font-size: 1.8rem;
 font-weight: bold;
-color: white;
-text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+color: #00A859;
 }
 
 .nav-links {
@@ -60,79 +57,48 @@ gap: 2rem;
 }
 
 .nav-links a {
-color: white;
+color: #333;
 text-decoration: none;
-transition: all 0.3s ease;
+font-weight: 500;
+transition: color 0.3s ease;
 padding: 0.5rem 1rem;
-border-radius: 25px;
 }
 
 .nav-links a:hover {
-background: rgba(255, 255, 255, 0.2);
-transform: translateY(-2px);
+color: #00A859;
 }
 
 /* Hero Section */
 .hero {
-min-height: 100vh;
-display: flex;
-align-items: center;
-justify-content: center;
+padding: 120px 0 80px;
+background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 text-align: center;
-color: white;
-position: relative;
-overflow: hidden;
-}
-
-.hero::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/><circle cx="900" cy="800" r="80" fill="url(%23a)"/></svg>');
-animation: float 20s ease-in-out infinite;
-}
-
-@keyframes float {
-0%, 100% { transform: translateY(0px) rotate(0deg); }
-50% { transform: translateY(-20px) rotate(180deg); }
 }
 
 .hero-content {
-position: relative;
-z-index: 2;
 max-width: 800px;
-animation: fadeInUp 1s ease-out;
-}
-
-@keyframes fadeInUp {
-from {
-opacity: 0;
-transform: translateY(30px);
-}
-to {
-opacity: 1;
-transform: translateY(0);
-}
+margin: 0 auto;
 }
 
 .hero h1 {
-font-size: 4rem;
+font-size: 3.5rem;
 font-weight: 700;
 margin-bottom: 1rem;
-text-shadow: 0 4px 8px rgba(0,0,0,0.3);
-background: linear-gradient(45deg, #fff, #f0f0f0);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
+color: #333;
+line-height: 1.2;
+}
+
+.hero-subtitle {
+font-size: 1.4rem;
+color: #00A859;
+font-weight: 600;
+margin-bottom: 1.5rem;
 }
 
 .hero p {
-font-size: 1.3rem;
+font-size: 1.2rem;
 margin-bottom: 2rem;
-opacity: 0.9;
+color: #666;
 max-width: 600px;
 margin-left: auto;
 margin-right: auto;
@@ -140,113 +106,85 @@ margin-right: auto;
 
 .cta-button {
 display: inline-block;
-background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+background: #00A859;
 color: white;
-padding: 1rem 2rem;
-border-radius: 50px;
+padding: 1rem 2.5rem;
+border-radius: 6px;
 text-decoration: none;
-font-weight: bold;
+font-weight: 600;
+font-size: 1.1rem;
 transition: all 0.3s ease;
-box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
-position: relative;
-overflow: hidden;
-}
-
-.cta-button::before {
-content: '';
-position: absolute;
-top: 0;
-left: -100%;
-width: 100%;
-height: 100%;
-background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-transition: left 0.5s;
-}
-
-.cta-button:hover::before {
-left: 100%;
+text-transform: uppercase;
+letter-spacing: 0.5px;
 }
 
 .cta-button:hover {
-transform: translateY(-3px);
-box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+background: #008a4a;
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(0,168,89,0.3);
 }
 
 /* Products Section */
 .products {
-padding: 5rem 0;
-background: white;
-position: relative;
-}
-
-.products::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-height: 100px;
-background: linear-gradient(180deg, rgba(102, 126, 234, 0.1) 0%, transparent 100%);
+padding: 80px 0;
+background: #fff;
 }
 
 .section-title {
 text-align: center;
-font-size: 3rem;
+font-size: 2.5rem;
 font-weight: 700;
+margin-bottom: 1rem;
+color: #333;
+}
+
+.section-subtitle {
+text-align: center;
+font-size: 1.2rem;
+color: #666;
 margin-bottom: 3rem;
-background: linear-gradient(45deg, #667eea, #764ba2);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
+max-width: 600px;
+margin-left: auto;
+margin-right: auto;
 }
 
 .products-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 gap: 2rem;
 margin-top: 3rem;
 }
 
 .product-card {
-background: white;
-border-radius: 20px;
+background: #fff;
+border-radius: 8px;
 padding: 2rem;
-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 transition: all 0.3s ease;
+border: 1px solid #e9ecef;
 position: relative;
-overflow: hidden;
-}
-
-.product-card::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-height: 4px;
-background: linear-gradient(45deg, #667eea, #764ba2);
 }
 
 .product-card:hover {
-transform: translateY(-10px);
-box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+transform: translateY(-5px);
+box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 }
 
 .product-icon {
-width: 60px;
-height: 60px;
-background: linear-gradient(45deg, #667eea, #764ba2);
-border-radius: 15px;
+width: 70px;
+height: 70px;
+background: #00A859;
+border-radius: 50%;
 display: flex;
 align-items: center;
 justify-content: center;
 margin-bottom: 1.5rem;
 color: white;
-font-size: 1.5rem;
+font-size: 1.8rem;
 }
 
 .product-card h3 {
-font-size: 1.5rem;
+font-size: 1.4rem;
 font-weight: 600;
 margin-bottom: 1rem;
 color: #333;
@@ -255,6 +193,7 @@ color: #333;
 .product-card p {
 color: #666;
 margin-bottom: 1.5rem;
+line-height: 1.6;
 }
 
 .product-features {
@@ -272,82 +211,165 @@ color: #555;
 content: '✓';
 position: absolute;
 left: 0;
-color: #667eea;
+color: #00A859;
 font-weight: bold;
+}
+
+.product-link {
+display: inline-block;
+color: #00A859;
+text-decoration: none;
+font-weight: 600;
+margin-top: 1rem;
+transition: color 0.3s ease;
+}
+
+.product-link:hover {
+color: #008a4a;
+}
+
+/* Stats Section */
+.stats {
+padding: 60px 0;
+background: #00A859;
+color: white;
+}
+
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 2rem;
+text-align: center;
+}
+
+.stat-item h3 {
+font-size: 2.5rem;
+font-weight: 700;
+margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+font-size: 1.1rem;
+opacity: 0.9;
 }
 
 /* Industries Section */
 .industries {
-padding: 5rem 0;
-background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 80px 0;
+background: #f8f9fa;
 }
 
 .industries-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 2rem;
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+gap: 1.5rem;
 margin-top: 3rem;
 }
 
 .industry-card {
 background: white;
-border-radius: 15px;
+border-radius: 8px;
 padding: 1.5rem;
 text-align: center;
-box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 transition: all 0.3s ease;
+border: 1px solid #e9ecef;
 }
 
 .industry-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+transform: translateY(-3px);
+box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
 .industry-icon {
-font-size: 2.5rem;
+font-size: 2rem;
 margin-bottom: 1rem;
+color: #00A859;
 }
 
 .industry-card h4 {
-font-size: 1.2rem;
+font-size: 1.1rem;
 font-weight: 600;
 color: #333;
 }
 
+/* CTA Section */
+.cta-section {
+padding: 80px 0;
+background: #333;
+color: white;
+text-align: center;
+}
+
+.cta-section h2 {
+font-size: 2.5rem;
+font-weight: 700;
+margin-bottom: 1rem;
+}
+
+.cta-section p {
+font-size: 1.2rem;
+margin-bottom: 2rem;
+opacity: 0.9;
+}
+
+.cta-button-white {
+display: inline-block;
+background: white;
+color: #333;
+padding: 1rem 2.5rem;
+border-radius: 6px;
+text-decoration: none;
+font-weight: 600;
+font-size: 1.1rem;
+transition: all 0.3s ease;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+
+.cta-button-white:hover {
+background: #f8f9fa;
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(255,255,255,0.2);
+}
+
 /* Footer */
 footer {
-background: #2c3e50;
-color: white;
-padding: 3rem 0;
-text-align: center;
+background: #fff;
+padding: 60px 0 30px;
+border-top: 1px solid #e9ecef;
 }
 
 .footer-content {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 2rem;
+gap: 3rem;
 margin-bottom: 2rem;
 }
 
 .footer-section h4 {
-margin-bottom: 1rem;
-color: #ecf0f1;
+margin-bottom: 1.5rem;
+color: #333;
+font-weight: 600;
 }
 
 .footer-section p, .footer-section a {
-color: #bdc3c7;
+color: #666;
 text-decoration: none;
 transition: color 0.3s ease;
+margin-bottom: 0.5rem;
+display: block;
 }
 
 .footer-section a:hover {
-color: #3498db;
+color: #00A859;
 }
 
 .footer-bottom {
-border-top: 1px solid #34495e;
+border-top: 1px solid #e9ecef;
 padding-top: 2rem;
-margin-top: 2rem;
+text-align: center;
+color: #666;
 }
 
 /* Responsive Design */
@@ -367,6 +389,26 @@ display: none;
 .products-grid {
 grid-template-columns: 1fr;
 }
+
+.stats-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+/* Animations */
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.fade-in {
+animation: fadeInUp 0.6s ease-out;
 }
 </style>
 ```
@@ -389,64 +431,96 @@ grid-template-columns: 1fr;
 ```
 <!-- Hero Section -->
 <section class="hero" id="home">
+<div class="container">
 <div class="hero-content">
+<div class="hero-subtitle">AI-Powered Voice Solutions</div>
 <h1>Transform Client Engagement</h1>
-<p>Revolutionize the way companies interact with their client base through AI-powered voice solutions that impact and transform agency and client support engagement.</p>
-<a href="#products" class="cta-button">Explore Our Solutions</a>
+<p>Revolutionize the way your company interacts with clients through intelligent voice technology that enhances support, drives lead generation, and transforms customer relationships.</p>
+<a href="#products" class="cta-button">Get Started Today</a>
+</div>
+</div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats">
+<div class="container">
+<div class="stats-grid">
+<div class="stat-item">
+<h3>24/7</h3>
+<p>Customer Support</p>
+</div>
+<div class="stat-item">
+<h3>95%</h3>
+<p>Client Satisfaction</p>
+</div>
+<div class="stat-item">
+<h3>50+</h3>
+<p>Industries Served</p>
+</div>
+<div class="stat-item">
+<h3>300%</h3>
+<p>ROI Improvement</p>
+</div>
+</div>
 </div>
 </section>
 
 <!-- Products Section -->
 <section class="products" id="products">
 <div class="container">
-<h2 class="section-title">Our Products</h2>
+<h2 class="section-title">Our Solutions</h2>
+<p class="section-subtitle">Comprehensive AI voice solutions designed to transform your business operations and client interactions</p>
 <div class="products-grid">
 <div class="product-card">
 <div class="product-icon">🎧</div>
 <h3>Customer Support</h3>
-<p>AI-powered voice solutions that provide 24/7 customer support with natural language processing and intelligent response systems.</p>
+<p>24/7 intelligent customer support with natural language processing and seamless escalation management.</p>
 <ul class="product-features">
-<li>24/7 automated support</li>
-<li>Natural language processing</li>
-<li>Multi-language support</li>
-<li>Escalation management</li>
+<li>Automated support responses</li>
+<li>Multi-language capabilities</li>
+<li>Smart escalation routing</li>
+<li>Real-time analytics</li>
 </ul>
+<a href="#" class="product-link">Learn More →</a>
 </div>
 
 <div class="product-card">
 <div class="product-icon">📈</div>
 <h3>Lead Generation</h3>
-<p>Intelligent voice bots that engage prospects, qualify leads, and seamlessly integrate with your sales pipeline.</p>
+<p>Intelligent lead qualification and nurturing through personalized voice interactions and campaign management.</p>
 <ul class="product-features">
-<li>Automated lead qualification</li>
-<li>Campaign management</li>
+<li>Automated lead scoring</li>
+<li>Campaign optimization</li>
 <li>Landing page integration</li>
-<li>Lead scoring & validation</li>
+<li>Performance tracking</li>
 </ul>
+<a href="#" class="product-link">Learn More →</a>
 </div>
 
 <div class="product-card">
 <div class="product-icon">📊</div>
 <h3>Data Collection</h3>
-<p>Comprehensive data gathering solutions that collect, analyze, and organize customer information for actionable insights.</p>
+<p>Comprehensive data gathering and analysis tools that provide actionable insights for better decision making.</p>
 <ul class="product-features">
-<li>Automated data capture</li>
-<li>Real-time analytics</li>
+<li>Smart data capture</li>
 <li>Custom survey creation</li>
-<li>Data validation & cleanup</li>
+<li>Advanced analytics</li>
+<li>Data validation</li>
 </ul>
+<a href="#" class="product-link">Learn More →</a>
 </div>
 
 <div class="product-card">
 <div class="product-icon">🔗</div>
 <h3>CRM Integration</h3>
-<p>Seamless integration with your existing CRM systems to streamline workflows and enhance customer relationship management.</p>
+<p>Seamless integration with existing CRM systems to streamline workflows and enhance customer management.</p>
 <ul class="product-features">
-<li>Seamless CRM sync</li>
+<li>API integrations</li>
 <li>Workflow automation</li>
-<li>Custom API integrations</li>
-<li>Real-time data updates</li>
+<li>Real-time sync</li>
+<li>Custom implementations</li>
 </ul>
+<a href="#" class="product-link">Learn More →</a>
 </div>
 </div>
 </div>
@@ -456,6 +530,7 @@ grid-template-columns: 1fr;
 <section class="industries" id="industries">
 <div class="container">
 <h2 class="section-title">Industries We Serve</h2>
+<p class="section-subtitle">Tailored solutions for diverse industry needs</p>
 <div class="industries-grid">
 <div class="industry-card">
 <div class="industry-icon">🏥</div>
@@ -481,7 +556,24 @@ grid-template-columns: 1fr;
 <div class="industry-icon">🚗</div>
 <h4>Automotive</h4>
 </div>
+<div class="industry-card">
+<div class="industry-icon">🏭</div>
+<h4>Manufacturing</h4>
 </div>
+<div class="industry-card">
+<div class="industry-icon">🏨</div>
+<h4>Hospitality</h4>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+<div class="container">
+<h2>Ready to Transform Your Business?</h2>
+<p>Get started with VoiceBot Studio today and revolutionize your client engagement</p>
+<a href="#contact" class="cta-button-white">Contact Us</a>
 </div>
 </section>
 
@@ -491,24 +583,33 @@ grid-template-columns: 1fr;
 <div class="footer-content">
 <div class="footer-section">
 <h4>VoiceBot Studio</h4>
-<p>Transforming client engagement through AI-powered voice solutions that revolutionize how companies interact with their customers.</p>
+<p>Leading provider of AI-powered voice solutions for business transformation and enhanced client engagement.</p>
+<p>Revolutionizing how companies connect with their customers through intelligent voice technology.</p>
 </div>
 <div class="footer-section">
 <h4>Products</h4>
-<p><a href="#products">Customer Support</a></p>
-<p><a href="#products">Lead Generation</a></p>
-<p><a href="#products">Data Collection</a></p>
-<p><a href="#products">CRM Integration</a></p>
+<a href="#products">Customer Support Solutions</a>
+<a href="#products">Lead Generation Tools</a>
+<a href="#products">Data Collection Systems</a>
+<a href="#products">CRM Integration Services</a>
 </div>
 <div class="footer-section">
-<h4>Contact</h4>
-<p>Ready to transform your client engagement?</p>
-<p><a href="mailto:info@voicebotstudio.com">info@voicebotstudio.com</a></p>
-<p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+<h4>Industries</h4>
+<a href="#industries">Healthcare</a>
+<a href="#industries">Financial Services</a>
+<a href="#industries">Real Estate</a>
+<a href="#industries">E-commerce</a>
+</div>
+<div class="footer-section">
+<h4>Contact Us</h4>
+<p>Ready to get started?</p>
+<a href="mailto:info@voicebotstudio.com">info@voicebotstudio.com</a>
+<a href="tel:+27123456789">+27 12 345 6789</a>
+<p>Johannesburg, South Africa</p>
 </div>
 </div>
 <div class="footer-bottom">
-<p>&copy; 2025 VoiceBot Studio. All rights reserved.</p>
+<p>&copy; 2025 VoiceBot Studio. All rights reserved. | Privacy Policy | Terms of Service</p>
 </div>
 </div>
 </footer>
@@ -518,22 +619,13 @@ grid-template-columns: 1fr;
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function (e) {
 e.preventDefault();
-document.querySelector(this.getAttribute('href')).scrollIntoView({
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({
 behavior: 'smooth'
 });
-});
-});
-
-// Header scroll effect
-window.addEventListener('scroll', function() {
-const header = document.querySelector('header');
-if (window.scrollY > 100) {
-header.style.background = 'rgba(255, 255, 255, 0.95)';
-header.style.backdropFilter = 'blur(15px)';
-} else {
-header.style.background = 'rgba(255, 255, 255, 0.1)';
-header.style.backdropFilter = 'blur(10px)';
 }
+});
 });
 
 // Add animation on scroll
@@ -545,18 +637,24 @@ rootMargin: '0px 0px -50px 0px'
 const observer = new IntersectionObserver(function(entries) {
 entries.forEach(entry => {
 if (entry.isIntersecting) {
-entry.target.style.opacity = '1';
-entry.target.style.transform = 'translateY(0)';
+entry.target.classList.add('fade-in');
 }
 });
 }, observerOptions);
 
-// Observe all product cards and industry cards
-document.querySelectorAll('.product-card, .industry-card').forEach(card => {
-card.style.opacity = '0';
-card.style.transform = 'translateY(20px)';
-card.style.transition = 'all 0.6s ease';
+// Observe all cards
+document.querySelectorAll('.product-card, .industry-card, .stat-item').forEach(card => {
 observer.observe(card);
+});
+
+// Header scroll effect
+window.addEventListener('scroll', function() {
+const header = document.querySelector('header');
+if (window.scrollY > 50) {
+header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+} else {
+header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+}
 });
 </script>
 ```
